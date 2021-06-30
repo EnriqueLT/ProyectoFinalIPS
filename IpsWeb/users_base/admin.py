@@ -1,8 +1,9 @@
 from django.contrib import admin
-from .models import Category
+
+from .models import Tipo_Cliente
 # Register your models here.
 
-class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('id','title')
+class Tipo_Cliente_Admin(admin.ModelAdmin):
+    list_display = ('id','tipCliNom')
 
-admin.site.register(Category, CategoryAdmin)
+admin.site.register(Tipo_Cliente, Tipo_Cliente_Admin)
