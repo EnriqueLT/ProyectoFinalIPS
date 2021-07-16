@@ -1,4 +1,5 @@
 {% load socialaccount %}
+{% load static %}
 
 <html>
 <head>
@@ -7,6 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+  {% load bootstrap4 %}
+  {% bootstrap_css %}
   <style type="text/css">
     #customBtn {
       display: inline-block;
@@ -51,6 +54,7 @@
 <body>
   {% if user.is_authenticated %}
     <p>Bienvenido {{ user.username }}</p>
+    <a href="{% url 'logout' %}">Sing out</a>
   {% else %}
     
     <div id="gSignInWrapper">
@@ -62,7 +66,10 @@
         </div>
       </a>
     </div>
+    <div><button class="btn btn-warning">apretame</button></div>
 
   {% endif %}
+
+  {% bootstrap_javascript jquery='full' %}
 </body>
 </html>

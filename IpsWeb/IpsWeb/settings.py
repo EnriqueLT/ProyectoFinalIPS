@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'bootstrap4',
     'django.contrib.sites',
     'oauth_app',
     'allauth',
@@ -50,6 +51,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
     'users_base',
+    'foro',
 ]
 
 MIDDLEWARE = [
