@@ -1,17 +1,29 @@
 <head>
-    <style>
-        form{
-            border:4px solid black;
-            margin: 0 auto;
-            padding: 40px;
-            width: fit-content;
-        }
-    </style>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"0>
-    
+    {% load bootstrap4 %}
+  {% bootstrap_css %}
+  <style>
+      .container{
+          margin-top: 200px;
+          padding: 20px;
+      }
+  </style>
 </head>
-<form action="{% url 'addInForum' %}" method="POST">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" class="btn btn-success" value="submit">
-</form>
+<div class="row">
+<div class="col-sm"></div>
+<div class="col-sm">
+    <form class="card box container" action="{% url 'addInForum' %}" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <input type="submit" class="col-sm-3 btn btn-success" value="submit">
+        </div>
+        
+    </form>
+</div>
+<div class="col-sm"></div>
+</div>
+{% bootstrap_javascript jquery='full' %}
+
+

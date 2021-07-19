@@ -4,23 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DataFlair discussion forum</title>
+    <title>Healthy Peru</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"0>
-    <style>
-        .box{
-            border: 4px solid black;
-            margin: 0 auto;
-        }
-    </style>
+    
 </head>
 <body>
-        <h2 class="jumbotron">
-            Currently active forums: {{count}}
+    <div class="jumbotron">
+        <h1>Da una Mano:</h1>
+        <h2>
+            
+             Foros activos actualmente: {{count}}
             <form method="POST" action="{% url 'addInForum' %}">
                 {% csrf_token %}
-            <button class="btn btn-success" style="width:fit-content; padding: 4px; margin:10px;">Add more</button>
+            <button class="btn btn-success" style="width:fit-content; padding: 4px; margin:10px;margin-left: 350px;">Agregar</button>
             </form>
         </h2>
+    </div>  
+        
             <div class="card-columns" style="padding: 10px; margin: 20px;"></div>
             
             
@@ -37,7 +37,7 @@
                             <p> By: {{forum.name}}</p>
                             email- {{forum.email}}
                             <hr>     
-                            <h4>Views from other users</h4>
+                            <h4>Respuestas por otros Usuarios</h4>
                             {%for discuss in discussions%}
                             {%for objs in discuss%}  
                             {% if objs.forum == forum %}
@@ -48,7 +48,7 @@
                             {%endfor%}
                             <form method="POST" action="{% url 'addInDiscussion' %}">
                                 {% csrf_token %}
-                            <button class="btn btn-success" style="width:fit-content; padding: 4px; margin:10px;">Add more</button>
+                            <button class="btn btn-success" style="width:fit-content; padding: 4px; margin:10px;">Agregar Respuesta</button>
                             </form>
                         </div>
                 </div>
