@@ -16,3 +16,8 @@ BASE DE DATOS:
 
 Para la implementación de bases de datos, se usa la incorporada por 
 el propio Django, donde se crean modelos.
+
+
+FORO
+
+Para acceder al foro localhost:8000/forito/
