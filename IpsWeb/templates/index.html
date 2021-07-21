@@ -84,7 +84,8 @@ http://www.tooplate.com/view/2098-health
                          <li><a href="#" class="smoothScroll">Foro</a></li>
                          <li><a href="#" class="smoothScroll">Contactos</a></li>
                          {% if user.is_authenticated %}
-                         <li class="appointment-btn"><a href="#">{{ user.username }}</a></li>
+                         <li class="appointment-btn"><a href="accounts/logout">Cerrar Sesión</a></li>
+                         <li><a href="#">{{ user.first_name }}</a></li>
                          {% else %}
                          <li class="appointment-btn"><a href="#">Ingresar</a> </li>
                           <div id="signindiv">
