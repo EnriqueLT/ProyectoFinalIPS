@@ -12,7 +12,6 @@
             <form class="form box" method="POST" action="/departamento/">
                 {% csrf_token %}
                 <h1>Dapartamentos</h1>
-
                 <div class="form-group">
                     <label for="id_depcod">Código Departamento</label>
                     <input type="text" name="depcod" class="form-control" id="id_depcod" placeholder="codigo">
@@ -20,7 +19,7 @@
 
                 <div class="form-group">
                     <label for="id_depnom">Nombre Departamento</label>
-                    <input type="text" name="depnam" class="form-control" id="id_depnom" placeholder="Nombre">
+                    <input type="text" name="depnom" class="form-control" id="id_depnom" placeholder="Nombre">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Submit</button>

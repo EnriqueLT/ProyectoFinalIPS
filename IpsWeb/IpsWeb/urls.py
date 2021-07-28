@@ -32,4 +32,5 @@ urlpatterns = [
     path('foro/', views.foro , name='foro'),
     path('departamento/', views.departamento, name='departamento'),
     path('provincia/', views.provincia, name="provincia"),
+    path('distrito/',views.distrito, name='distrito'),
 ]

@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Usuario, Departamento, Provincia
+from .models import Usuario, Departamento, Provincia, Distrito
 
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
@@ -28,4 +28,12 @@ class InsertPro(forms.ModelForm):
 
     class Meta:
         model = Provincia
-        fields = ('procod','pronom')
+        fields = ('procod','pronom','prodepcod')
+        labels = {'procod':'Código de Provincia','pronom':'Nombre de provincia','prodepcod':'Departamento'}
+
+class InsertarDis(forms.ModelForm):
+
+    class Meta:
+        model = Distrito
+        fields = ('discod','disnom','disprocod')
+        labels = {'discod':'Código de distrito','disnom':'Nombre de distrito','disprocod':'Provincia'}

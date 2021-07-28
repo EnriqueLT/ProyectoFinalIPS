@@ -28,7 +28,7 @@ class Hospital(models.Model):
     hostipo = models.CharField(db_column='HosTipo', max_length=40)  # Field name made lowercase.
     hoscama = models.IntegerField(db_column='HosCama')  # Field name made lowercase.
     hosdispo = models.IntegerField(db_column='HosDispo')  # Field name made lowercase.
-    hoszonId = models.CharField(db_column='HosZonId', max_length=8)  # Field name made lowercase.
+    hoszonid = models.CharField(db_column='HosZonId', max_length=8)  # Field name made lowercase.
     hosusucod = models.ForeignKey('Usuario', models.DO_NOTHING, db_column='HosUsuCod')  # Field name made lowercase.
 
     class Meta:
@@ -75,6 +75,10 @@ class Usuario(models.Model):
 class Departamento(models.Model):
     depcod = models.IntegerField(db_column='DepCod', primary_key=True)
     depnom = models.CharField(db_column='DepNom', max_length=40)
+    
+    def __str__(self):
+        return self.depnom+""
+    
 
     class Meta:
         db_table = 'departamento'
@@ -83,18 +87,23 @@ class Departamento(models.Model):
 class Provincia(models.Model):
     procod = models.IntegerField(db_column='ProCod', primary_key=True)
     pronom = models.CharField(db_column='ProNom', max_length=40)
+    prodepcod = models.ForeignKey('Departamento',models.DO_NOTHING, db_column='ProDepCod')
 
+    def __str__(self):
+        return self.pronom+""
+    
     class Meta:
         managed = False
         db_table = 'provincia'
-        unique_together = (('procod'),)
+        unique_together = (('procod','prodepcod'),)
 
 class Distrito(models.Model):
     discod = models.IntegerField(db_column='DisCod', primary_key=True)
     disnom = models.CharField(db_column='DisNom', max_length=40)
+    disprocod = models.ForeignKey('Provincia',models.DO_NOTHING, db_column='DisProCod')
 
     class Meta:
         managed = False
         db_table = 'distrito'
-        unique_together = (('discod'),)
+        unique_together = (('discod','disprocod'),)
 

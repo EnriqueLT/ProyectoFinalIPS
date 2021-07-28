@@ -2,6 +2,7 @@
   position: absolute;
   background-color: #a5c422;
   padding: 0px;
+  padding-left: 10px;
   text-align: center;
   border-radius: 0px 5px 5px 5px;
   vertical-align: middle;
@@ -35,6 +36,7 @@
     border: thin solid #888;
     box-shadow: 1px 1px 1px grey;
     white-space: nowrap;
+    padding-left: 10px;
   }
   #customBtn:hover {
     cursor: pointer;

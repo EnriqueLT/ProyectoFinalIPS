@@ -1,0 +1,28 @@
+{% load bootstrap4 %}
+{% load crispy_forms_tags %}
+{% bootstrap_css %}
+
+<body>
+
+<section class="container">
+
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <h1>Distritos</h1>
+            <form class="form box" method="POST" action="/distrito/">
+                {% csrf_token %}
+
+                {{ form|crispy }}
+                
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <div class="col-4"></div>
+    </div>
+
+
+</section>
+
+
+</body>
