@@ -16,18 +16,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
-from django.contrib.auth.views import LogoutView
-
-
+from django.contrib.auth import views as auth_views
+from usuarios import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name="index.html")),
-    path('accounts/', include('allauth.urls')),
-    path('logout', LogoutView.as_view()),
-]
-
-#Add Django site authentication urls (for login, logout, password management)
-urlpatterns += [
     path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('allauth.urls')),
+    path('logout', auth_views.LogoutView.as_view()),
+    path('register', views.register, name='register'),
+    path('signup/',views.signup,name='signup'),
+    path('camas/', views.camas,name='camas'),
+    path('oxigeno/', views.oxigeno, name='oxigeno'),
+    path('foro/', views.foro , name='foro'),
+    path('departamento/', views.departamento, name='departamento'),
+    path('provincia/', views.provincia, name="provincia"),
 ]

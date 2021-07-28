@@ -10,10 +10,10 @@ CREATE TABLE `usuario`
   `UsuCod` Int NOT NULL AUTO_INCREMENT,
   `UsuNom` Char(40) NOT NULL,
   `UsuApe` Char(40) NOT NULL,
-  `UsuZonId` Int NOT NULL,
+  `UsuZon` char(8) NOT NULL,
   `UsuTel` Int(9) NOT NULL,
   `UsuDir` Char(40) NOT NULL,
-  PRIMARY KEY (`UsuCod`, `UsuZonId`),
+  PRIMARY KEY (`UsuCod`),
   UNIQUE `UsuCod` (`UsuCod`)
 )
 ;
@@ -27,9 +27,9 @@ CREATE TABLE `hospital`
   `HosTipo` Char(40) NOT NULL,
   `HosCama` Int NOT NULL,
   `HosDispo` Bool NOT NULL,
-  `HosZonId` Int NOT NULL,
+  `HosZonId` Char(8) NOT NULL,
   `HosUsuCod` Int NOT NULL,
-  PRIMARY KEY (`HosCod`, `HosUsuCod`, `HosZonId`)
+  PRIMARY KEY (`HosCod`, `HosUsuCod`)
 )
 ;
 
@@ -69,24 +69,10 @@ CREATE TABLE `proveedor`
   `ProveNom` Char(40) NOT NULL,
   `ProveIdPro` Int NOT NULL,
   `ProveUsuCod` Int NOT NULL,
-  `UsuZonId` Int NOT NULL,
-  PRIMARY KEY (`ProveCod`, `ProveIdPro`, `UsuZonId`, `ProveUsuCod`)
+  PRIMARY KEY (`ProveCod`, `ProveIdPro`, `ProveUsuCod`)
 )
 ;
 
--- Table zona
-
-CREATE TABLE `zona`
-(
-  `IdZon` Int NOT NULL,
-  `ZonDep` Char(40) NOT NULL,
-  `ZonPro` Char(40) NOT NULL,
-  `ZonDis` Char(40) NOT NULL
-)
-;
-
-ALTER TABLE `zona` ADD PRIMARY KEY (`IdZon`)
-;
 
 -- Create foreign keys (relationships) section -------------------------------------------------
 
@@ -99,15 +85,6 @@ ALTER TABLE `foro_comentario` ADD CONSTRAINT `Relationship3` FOREIGN KEY (`ComId
 ALTER TABLE `proveedor` ADD CONSTRAINT `Relationship5` FOREIGN KEY (`ProveIdPro`) REFERENCES `producto` (`IdPro`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ;
 
-ALTER TABLE `usuario` ADD CONSTRAINT `Relationship13` FOREIGN KEY (`UsuZonId`) REFERENCES `zona` (`IdZon`) ON DELETE RESTRICT ON UPDATE RESTRICT
-;
-
 ALTER TABLE `hospital` ADD CONSTRAINT `Relationship14` FOREIGN KEY (`HosUsuCod`) REFERENCES `usuario` (`UsuCod`) ON DELETE RESTRICT ON UPDATE RESTRICT
-;
-
-ALTER TABLE `hospital` ADD CONSTRAINT `Relationship15` FOREIGN KEY (`HosZonId`) REFERENCES `zona` (`IdZon`) ON DELETE RESTRICT ON UPDATE RESTRICT
-;
-
-ALTER TABLE `proveedor` ADD CONSTRAINT `Relationship17` FOREIGN KEY (`ProveUsuCod`, `UsuZonId`) REFERENCES `usuario` (`UsuCod`, `UsuZonId`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ;
 

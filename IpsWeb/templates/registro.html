@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title></title> 
+	<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" >
+	<link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+	
+
+</head>  
+<body class="body" style="background: url('{% static '/img/loginImagen.jpeg' %}');">
+ <form class="formulario" method="POST", action="register">
+    
+    <h1>Registrar datos adicionales</h1>
+    {% csrf_token %}
+     <div class="contenedor">
+     
+        <div class="input-contenedor">
+            <i class="fas fa-user icon"></i>
+            <input id="id_usunom" name="usunom" type="text" placeholder="Nombre">
+         </div>
+
+         <div class="input-contenedor">
+            <i class="fas fa-user icon"></i>
+            <input id="id_usuape" name="usuape" type="text" placeholder="Apellido">
+         </div>
+
+         <div class="input-contenedor">
+            <i class="fas fa-user icon"></i>
+            <input id="id_usuzon" name="usuzon" type="text" placeholder="Ubicacion Ubiego">
+         </div>
+         
+         <div class="input-contenedor">
+            <i class="fas fa-user icon"></i>
+            <input id="id_usutel" name="usutel" type="text" placeholder="Telefono">
+         </div>
+
+         <div class="input-contenedor">
+            <i class="fas fa-user icon"></i>
+            <input id="id_usudir" name="usudir" type="text" placeholder="Dirección">
+         </div>
+
+         <input type="submit" value="Registrate" class="button">
+         
+        </div>
+    </form>
+</body>
+</html>

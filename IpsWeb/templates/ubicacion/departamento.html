@@ -1,0 +1,36 @@
+{% load bootstrap4 %}
+
+{% bootstrap_css %}
+
+<body>
+
+<section class="container">
+
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <form class="form box" method="POST" action="/departamento/">
+                {% csrf_token %}
+                <h1>Dapartamentos</h1>
+
+                <div class="form-group">
+                    <label for="id_depcod">Código Departamento</label>
+                    <input type="text" name="depcod" class="form-control" id="id_depcod" placeholder="codigo">
+                </div>
+
+                <div class="form-group">
+                    <label for="id_depnom">Nombre Departamento</label>
+                    <input type="text" name="depnam" class="form-control" id="id_depnom" placeholder="Nombre">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <div class="col-4"></div>
+    </div>
+
+
+</section>
+
+
+</body>

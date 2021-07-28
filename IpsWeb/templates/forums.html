@@ -1,0 +1,154 @@
+{% load bootstrap4 %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital@1&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <!--NavBar Section-->
+        <div class="navbar">
+            <nav class="navigation hide" id="navigation">
+                <span class="close-icon" id="close-icon" onclick="showIconBar()"><i class="fa fa-close"></i></span>
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="/">Inicio</a></li>
+                    <li class="nav-item"><a href="foro">Temas</a></li>
+                    <li class="nav-item"><a href="detail.html">Foro </a></li>
+                </ul>
+            </nav>
+            <a class="bar-icon" id="iconBar" onclick="hideIconBar()"><i class="fa fa-bars"></i></a>
+            <div class="brand">FORO - DA UNA MANO</div>
+        </div>
+        <!--SearchBox Section-->
+        <div class="search-box">
+            <div>
+                <select name="" id="">
+                    <option value="Everything">Everything</option>
+                    <option value="Titles">Titles</option>
+                    <option value="Descriptions">Descriptions</option>
+                </select>
+                <input type="text" name="q" placeholder="search ...">
+                <button><i class="fa fa-search"></i></button>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="subforum">
+            <div class="subforum-title">
+                <h1>CAMAS UCI</h1>
+            </div>
+            <div class="subforum-row">
+                <div class="subforum-icon subforum-column center">
+                    <img src="https://www.212asesores.com/wp-content/uploads/2018/10/seguros-de-salud-icono-1-300x237.png" width="60" height="50" />
+                </div>
+                <div class="subforum-description subforum-column">
+                    <h4><a href="#">DONACIONES</a></h4>
+                    <p>En este apartado podra acceder a comentarios de personas que brindan ayuda en la donacion de una Cama UCI.</p>
+                </div>
+                <div class="subforum-stats subforum-column center">
+                    <span>24 Posts | 12 Topics</span>
+                </div>
+                <div class="subforum-info subforum-column">
+                    <b><a href="">Ultima publicacion</a></b> by <a href="">Romina Lopez Arce</a> 
+                    <br>on <small>22 07 2021</small>
+                </div>
+            </div>
+            <div class="subforum-row">
+                <div class="subforum-icon subforum-column center">
+                    <img src="https://www.212asesores.com/wp-content/uploads/2018/10/seguros-de-salud-icono-1-300x237.png" width="60" height="50" />
+                </div>
+                <div class="subforum-description subforum-column">
+                    <h4><a href="#">SOLICITUDES</a></h4>
+                    <p>En este apartado podra acceder a comentarios de personas que realizan una solicitud de Cama UCI.</p>
+                </div>
+                <div class="subforum-stats subforum-column center">
+                    <span>22 Posts | 10 Topics</span>
+                </div>
+                <div class="subforum-info subforum-column">
+                    <b><a href="">Ultima publicacion</a></b> by <a href="">Delia Paola Puma</a> 
+                    <br>on <small>17 07 2021</small>
+                </div>
+            </div>
+        </div>
+        
+        <!--More-->
+        
+        <div class="subforum">
+            <div class="subforum-title">
+                <h1>BALONES DE OXIGENO</h1>
+            </div>
+            <div class="subforum-row">
+                <div class="subforum-icon subforum-column center">
+                    <img src="https://www.212asesores.com/wp-content/uploads/2018/10/seguros-de-salud-icono-1-300x237.png" width="60" height="50" />
+                </div>
+                <div class="subforum-description subforum-column">
+                    <h4><a href="#">DONACIONES</a></h4>
+                    <p>En este apartado podra acceder a publicaciones de personas que brindan donaciones de balones de oxigeno..</p>
+                </div>
+                <div class="subforum-stats subforum-column center">
+                    <span>2 Posts | 10 Topics</span>
+                </div>
+                <div class="subforum-info subforum-column">
+                    <b><a href="">Last post</a></b> by <a href="">Julia Miriam Diaz</a> 
+                    <br>on <small>19 07 2021</small>
+                </div>
+            </div>
+            <hr class="subforum-devider">
+            <div class="subforum-row">
+                <div class="subforum-icon subforum-column center">
+                    <img src="https://www.212asesores.com/wp-content/uploads/2018/10/seguros-de-salud-icono-1-300x237.png" width="60" height="50" />
+                </div>
+                <div class="subforum-description subforum-column">
+                    <h4><a href="#">SOLICITUDES</a></h4>
+                    <p>En este apartado podra acceder a publicaciones de personas que solicitan balones de oxigeno..</p>
+                </div>
+                <div class="subforum-stats subforum-column center">
+                    <span>24 Posts | 12 Topics</span>
+                </div>
+                <div class="subforum-info subforum-column">
+                    <b><a href="">Last post</a></b> by <a href="">Alex Fernando de la Fuente.</a> 
+                    <br>on <small>19 07 2021</small>
+                </div>
+            </div>
+            <hr class="subforum-devider">
+            
+        
+        <div class="subforum">
+            <div class="subforum-title">
+                <h1>AYUDA-INFORMACION</h1>
+            </div>
+            <div class="subforum-row">
+                <div class="subforum-icon subforum-column center">
+                    <img src="https://www.212asesores.com/wp-content/uploads/2018/10/seguros-de-salud-icono-1-300x237.png" width="60" height="50" />
+                </div>
+                <div class="subforum-description subforum-column">
+                    <h4><a href="#">Tips para realizar una publicacion</a></h4>
+                    <p>En este apartado podra encontrar recomendaciones para realizar una buena publicacion</p>
+                </div>
+                <div class="subforum-stats subforum-column center">
+                    <span>24 Posts | 12 Topics</span>
+                </div>
+                <div class="subforum-info subforum-column">
+                    <b><a href="">Last post</a></b> by <a href="">Agustina Dayana Molina</a> 
+                    <br>on <small>21 07 2021</small>
+                </div>
+            </div>
+            <hr class="subforum-devider">
+            
+           
+        </div>
+        <!---->
+    </div>
+
+    <!-- Forum Info -->
+    <script src="{% static 'js/main.js' 5]"></script>
+</body>
+</html>

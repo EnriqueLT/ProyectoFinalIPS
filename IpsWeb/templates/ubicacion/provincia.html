@@ -1,0 +1,37 @@
+{% load bootstrap4 %}
+
+{% bootstrap_css %}
+
+<body>
+
+<section class="container">
+
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <h1>Provincias</h1>
+            <form class="form box" method="POST" action="/provincia/">
+                {% csrf_token %}
+                
+
+                <div class="form-group">
+                    <label for="id_depcod">Código provincia</label>
+                    <input type="text" name="procod" class="form-control" id="id_depcod" placeholder="codigo">
+                </div>
+
+                <div class="form-group">
+                    <label for="id_depnom">Nombre provincia</label>
+                    <input type="text" name="pronam" class="form-control" id="id_depnom" placeholder="Nombre">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <div class="col-4"></div>
+    </div>
+
+
+</section>
+
+
+</body>
